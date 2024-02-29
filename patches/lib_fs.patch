@@ -1,0 +1,34 @@
+diff --git a/lib/fs/fadvise_zos.go b/lib/fs/fadvise_zos.go
+new file mode 100644
+index 000000000..2a158b771
+--- /dev/null
++++ b/lib/fs/fadvise_zos.go
+@@ -0,0 +1,8 @@
++package fs
++
++import "os"
++
++func fadviseSequentialRead(f *os.File, prefetch bool) error {
++	// TODO: implement this properly
++	return nil
++}
+diff --git a/lib/fs/fs_nix.go b/lib/fs/fs_nix.go
+index fed424edb..4141ed89a 100644
+--- a/lib/fs/fs_nix.go
++++ b/lib/fs/fs_nix.go
+@@ -1,4 +1,4 @@
+-//go:build linux || darwin || freebsd
++//go:build linux || darwin || freebsd || zos
+ 
+ package fs
+ 
+diff --git a/lib/fs/fs_unix.go b/lib/fs/fs_unix.go
+index c7308fa37..f4605e1b1 100644
+--- a/lib/fs/fs_unix.go
++++ b/lib/fs/fs_unix.go
+@@ -1,4 +1,4 @@
+-//go:build linux || darwin || freebsd || openbsd
++//go:build linux || darwin || freebsd || openbsd || zos
+ 
+ package fs
+ 
