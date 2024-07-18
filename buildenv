@@ -1,5 +1,5 @@
 # bump: victoriametrics-version /VICTORIAMETRICS_VERSION="(.*)"/ https://github.com/VictoriaMetrics/VictoriaMetrics.git|semver:*
-VICTORIAMETRICS_VERSION="1.97.1"
+VICTORIAMETRICS_VERSION="1.102.0"
 
 export ZOPEN_BUILD_LINE="STABLE"
 export ZOPEN_STABLE_TAG="v${VICTORIAMETRICS_VERSION}"
