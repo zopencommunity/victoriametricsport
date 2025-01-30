@@ -1,5 +1,35 @@
 [![Automatic version updates](https://github.com/ZOSOpenTools/victoriametricsport/actions/workflows/bump.yml/badge.svg)](https://github.com/ZOSOpenTools/victoriametricsport/actions/workflows/bump.yml)
 
-# VictoriaMetrics
+# Victoriametrics
 
-A fast, cost-effective and scalable monitoring solution and time series database.
+A high-performance time-series database
+
+# Installation and Usage
+
+Use the zopen package manager ([QuickStart Guide](https://zopen.community/#/Guides/QuickStart)) to install:
+```bash
+zopen install victoriametrics
+```
+
+# Building from Source
+
+1. Clone the repository:
+```bash
+git clone https://github.com/zopencommunity/victoriametricsport.git
+cd victoriametricsport
+```
+2. Build using zopen:
+```bash
+zopen build -vv
+```
+
+See the [zopen porting guide](https://zopen.community/#/Guides/Porting) for more details.
+
+# Documentation
+
+
+# Troubleshooting
+TBD
+
+# Contributing
+Contributions are welcome! Please follow the [zopen contribution guidelines](https://github.com/zopencommunity/meta/blob/main/CONTRIBUTING.md).
