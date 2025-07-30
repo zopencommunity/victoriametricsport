@@ -23,8 +23,9 @@ zopen_init()
   export CGO_ENABLED=0
   # Go installs binaries, so create the bin dir as well
   export GOBIN=$ZOPEN_INSTALL_DIR/bin
+  mkdir -p $ZOPEN_INSTALL_DIR/bin
+  unset CC CXX
   export PATH=$PATH:$GOROOT/go-build-zos/bin
-  mkdir -p $ZOPEN_INSTALL_DIR
 }
 
 zopen_wharf()
@@ -32,20 +33,24 @@ zopen_wharf()
   cd ..
   go work init ./VictoriaMetrics
   wharf ./VictoriaMetrics/app/vmagent
-  cd ./VictoriaMetrics
+  cd -
 }
 
 zopen_install()
 {
-  mv ./bin/vmagent-pure $GOBIN
+  mkdir -p $GOBIN
+  cp bin/vmagent-pure $GOBIN/
 }
 
 zopen_clean()
 {
+  # Go installs binaries, so create the bin dir as well
+  export GOBIN=$ZOPEN_INSTALL_DIR/bin
+  export PATH=$PATH:$GOROOT/go-build-zos/bin
   rm -rf ../.wharf_cache ../go.work* ../wharf_port
 }
 
 zopen_get_version()
 {
-  vmagent -version
+  echo "$VICTORIAMETRICS_VERSION"
 }
